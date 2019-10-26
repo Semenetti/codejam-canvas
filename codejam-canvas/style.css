@@ -3,7 +3,6 @@
     max-width: 100%;    
     margin: 0 auto;
 }
-
 .row {    
     height: 80vh;
     margin-top: 25px;
@@ -11,53 +10,35 @@
     justify-content: space-around;
     align-items: center;
 }
-
 .menu li {    
     height: 20px;
-    line-height: 20px;
-   
+    line-height: 20px;   
 }
-
 .menu img {
 width: 15px;
 padding-right: 10px;
 }
-
-
 ul {
     padding: 20px 50px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-
 li {
     list-style: none;
 }
-
-
-
 .menu li a {
     text-decoration: none;
 }
-
-
-.canvas-block {
-   
-}
-
 canvas {
     border: 2px solid grey;    
 }
-
 .button-block {
     flex-basis: 20%;     
 }
-
 button {
     width: 100%;
     padding: 7px;
     margin: 3px;
 }
-
 #canvasImg, #x32x32 {
     display: none;    
 }
