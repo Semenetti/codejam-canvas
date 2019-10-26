@@ -6219,7 +6219,7 @@ var B = [
 
 var canvas = document.getElementById("canvasImg"), // Select our canvas element
     ctx = canvas.getContext("2d"), // Save the context we're going to use    
-    scale = 1; // Scales the whole image by this amount
+    scale = 10; // Scales the whole image by this amount
 
 var imgCanvas = document.getElementById("photo");
 context = canvas.getContext("2d");
