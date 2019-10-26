@@ -6217,48 +6217,48 @@ var B = [
   ];
 
 
-var canvas = document.getElementById("canvasImg"), // Select our canvas element
-    ctx = canvas.getContext("2d"), // Save the context we're going to use    
-    scale = 10; // Scales the whole image by this amount
+var canvas = document.getElementById("canvasImg");
+    ctx = canvas.getContext("2d");    
+    scale = 10; 
 
 var imgCanvas = document.getElementById("photo");
 context = canvas.getContext("2d");
 context.drawImage(imgCanvas, 0, 0, 512, 512);
 
 
-var canvas4x4 = document.getElementById("x4x4"), // Select our canvas element
-    ctx = canvas4x4.getContext("2d"), // Save the context we're going to use
-    width = A[0].length, // Get the widths
-    height = A.length, // Get the height
-    scale = 128; // Scales the whole image by this amount
+var canvas4x4 = document.getElementById("x4x4"), 
+    ctx = canvas4x4.getContext("2d"), 
+    width = A[0].length, 
+    height = A.length, 
+    scale = 128; 
 
-    canvas4x4.width = width * scale; // Set the canvas width
-    canvas4x4.height = height * scale; // Set the canvas height
+    canvas4x4.width = width * scale; 
+    canvas4x4.height = height * scale; 
 
-// Loop through each color and draw that section
+
 for(var row = 0; row < height; row++) {
     for(var col = 0; col < width; col++) {
         
-        ctx.fillStyle = "#" + A[row][col]; // Set the color to the one specified
-        ctx.fillRect(col * scale, row * scale, scale, scale); // Actually draw the rectangle
+        ctx.fillStyle = "#" + A[row][col];
+        ctx.fillRect(col * scale, row * scale, scale, scale);
     }
 }
 
-var canvas32x32 = document.getElementById("x32x32"), // Select our canvas element
-    ctx = canvas32x32.getContext("2d"), // Save the context we're going to use
-    width = B[0].length, // Get the widths
-    height = B.length, // Get the height
-    scale = 16; // Scales the whole image by this amount
+var canvas32x32 = document.getElementById("x32x32"),
+    ctx = canvas32x32.getContext("2d"), 
+    width = B[0].length, 
+    height = B.length,
+    scale = 16; 
 
-    canvas32x32.width = width * scale; // Set the canvas width
-    canvas32x32.height = height * scale; // Set the canvas height
+    canvas32x32.width = width * scale; 
+    canvas32x32.height = height * scale; 
 
-// Loop through each color and draw that section
+
 for(var row = 0; row < height; row++) {
     for(var col = 0; col < width; col++) {
         
-        ctx.fillStyle = 'rgba' + '(' + B[row][col] + ')'; // Set the color to the one specified
-        ctx.fillRect(col * scale, row * scale, scale, scale); // Actually draw the rectangle
+        ctx.fillStyle = 'rgba' + '(' + B[row][col] + ')'; 
+        ctx.fillRect(col * scale, row * scale, scale, scale); 
     }
 }
 
