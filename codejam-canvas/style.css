@@ -58,6 +58,6 @@ button {
     margin: 3px;
 }
 
-#x4x4, #x32x32 {
+#canvasImg, #x32x32 {
     display: none;    
 }
