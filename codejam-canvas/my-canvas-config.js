@@ -6217,65 +6217,54 @@ var B = [
   ];
 
 
-var canvas = document.getElementById("canvasImg");
-    ctx = canvas.getContext("2d");    
-    scale = 10; 
+var canvas = document.getElementById("canvas");
+    ctx = canvas.getContext("2d");
 
-var imgCanvas = document.getElementById("photo");
-context = canvas.getContext("2d");
-context.drawImage(imgCanvas, 0, 0, 512, 512);
+var imgCanvas = document.createElement('img');
+    imgCanvas.src = "./assets/image.png"; 
+    context = canvas.getContext("2d");
+    
+  imgCanvas.addEventListener("load", function() {
+  context.drawImage(imgCanvas, 0, 0, 512, 512);  
+  }, false);
 
+bgImage.addEventListener("click", function(){
+imgCanvas.src = "./assets/image.png";
+imgCanvas.addEventListener("load", function() {
+  context.drawImage(imgCanvas, 0, 0, 512, 512);  
+}, false);
+});
 
-var canvas4x4 = document.getElementById("x4x4"), 
-    ctx = canvas4x4.getContext("2d"), 
+  btn4x4.addEventListener("click", function(){           
     width = A[0].length, 
     height = A.length, 
     scale = 128; 
+    size();
 
-    canvas4x4.width = width * scale; 
-    canvas4x4.height = height * scale; 
-
-
-for(var row = 0; row < height; row++) {
-    for(var col = 0; col < width; col++) {
-        
-        ctx.fillStyle = "#" + A[row][col];
-        ctx.fillRect(col * scale, row * scale, scale, scale);
+  for(var row = 0; row < height; row++) {
+      for(var col = 0; col < width; col++) {        
+          ctx.fillStyle = "#" + A[row][col];
+          ctx.fillRect(col * scale, row * scale, scale, scale);
+      }
     }
-}
+  });
 
-var canvas32x32 = document.getElementById("x32x32"),
-    ctx = canvas32x32.getContext("2d"), 
+  btn32x32.addEventListener("click", function(){     
     width = B[0].length, 
     height = B.length,
     scale = 16; 
-
-    canvas32x32.width = width * scale; 
-    canvas32x32.height = height * scale; 
-
+    size();
 
 for(var row = 0; row < height; row++) {
-    for(var col = 0; col < width; col++) {
-        
+    for(var col = 0; col < width; col++) {        
         ctx.fillStyle = 'rgba' + '(' + B[row][col] + ')'; 
         ctx.fillRect(col * scale, row * scale, scale, scale); 
     }
+  }
+});
+
+function size() {
+  canvas.width = width * scale; 
+  canvas.height = height * scale; 
 }
-
-bgImage.addEventListener("click", function(){
-    x32x32.style.display = "none";
-    x4x4.style.display = "none";
-    canvasImg.style.display = "block";
-  });
-
-  btn4x4.addEventListener("click", function(){
-    x32x32.style.display = "none";
-    canvasImg.style.display = "none";
-    x4x4.style.display = "block";
-  });
-
-  btn32x32.addEventListener("click", function(){
-      x4x4.style.display = "none";
-      canvasImg.style.display = "none";
-      x32x32.style.display = "block";
-  });
+  
