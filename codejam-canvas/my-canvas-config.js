@@ -6224,22 +6224,18 @@ var imgCanvas = document.createElement('img');
     imgCanvas.src = "./assets/image.png"; 
     context = canvas.getContext("2d");
     
-  imgCanvas.addEventListener("load", function() {
-  context.drawImage(imgCanvas, 0, 0, 512, 512);  
-  }, false);
+    draw();
 
 bgImage.addEventListener("click", function(){
 imgCanvas.src = "./assets/image.png";
-imgCanvas.addEventListener("load", function() {
-  context.drawImage(imgCanvas, 0, 0, 512, 512);  
-}, false);
+draw()
 });
 
   btn4x4.addEventListener("click", function(){           
     width = A[0].length, 
     height = A.length, 
     scale = 128; 
-    size();
+    
 
   for(var row = 0; row < height; row++) {
       for(var col = 0; col < width; col++) {        
@@ -6253,7 +6249,7 @@ imgCanvas.addEventListener("load", function() {
     width = B[0].length, 
     height = B.length,
     scale = 16; 
-    size();
+    
 
 for(var row = 0; row < height; row++) {
     for(var col = 0; col < width; col++) {        
@@ -6263,8 +6259,9 @@ for(var row = 0; row < height; row++) {
   }
 });
 
-function size() {
-  canvas.width = width * scale; 
-  canvas.height = height * scale; 
+function draw() {
+  imgCanvas.addEventListener("load", function() {
+    context.drawImage(imgCanvas, 0, 0, 512, 512);  
+    }, false); 
 }
   
