@@ -6217,10 +6217,10 @@ var B = [
   ];
 
 
-var canvas = document.getElementById("canvas");
+const canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
 
-var imgCanvas = document.createElement('img');
+const imgCanvas = document.createElement('img');
     imgCanvas.src = "./assets/image.png"; 
     context = canvas.getContext("2d");
     
@@ -6237,8 +6237,8 @@ draw()
     scale = 128; 
     
 
-  for(var row = 0; row < height; row++) {
-      for(var col = 0; col < width; col++) {        
+  for(let row = 0; row < height; row++) {
+      for(let col = 0; col < width; col++) {        
           ctx.fillStyle = "#" + A[row][col];
           ctx.fillRect(col * scale, row * scale, scale, scale);
       }
@@ -6251,8 +6251,8 @@ draw()
     scale = 16; 
     
 
-for(var row = 0; row < height; row++) {
-    for(var col = 0; col < width; col++) {        
+for(let row = 0; row < height; row++) {
+    for(let col = 0; col < width; col++) {        
         ctx.fillStyle = 'rgba' + '(' + B[row][col] + ')'; 
         ctx.fillRect(col * scale, row * scale, scale, scale); 
     }
